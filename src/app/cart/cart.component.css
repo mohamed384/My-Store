@@ -1,0 +1,30 @@
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width:768px) {
+    .flex {
+        flex-direction: column;
+    }
+}
+
+
+app-form {
+    margin-left: 20px;
+}
+
+
+.total {
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.noData {
+    text-align: center;
+    font-size: 30px;
+    color: var(--main-color);
+    font-weight: bold;
+    margin-top: 50px;
+}

@@ -1,0 +1,32 @@
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.success {
+    font-size: 50px;
+    font-weight: bold;
+    padding: 10px;
+    color: var(--main-color);
+}
+
+.text {
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.text span {
+    font-size: 20px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.back {
+    padding-left: 10px;
+    color: var(--main-color);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}

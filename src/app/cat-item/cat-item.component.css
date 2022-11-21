@@ -1,0 +1,43 @@
+.card {
+    display: flex;
+}
+
+.card img {
+    width: 150px;
+    height: 200px;
+    padding: 3px;
+    margin: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.card .info {
+    margin-left: 20px;
+}
+
+.card .info div {
+    display: inline-block;
+    width: fit-content;
+}
+
+.card .info .menuValue {
+    width: 60px;
+    text-align: center;
+    margin-left: 5px;
+    outline: none;
+    cursor: auto;
+}
+
+.card .delete {
+    display: block;
+    width: 55px;
+    height: 30px;
+    padding: 2px;
+    margin-top: 5px;
+    text-align: center;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}

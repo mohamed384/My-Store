@@ -1,0 +1,63 @@
+<form [formGroup]="myform" (ngSubmit)="submit()">
+  <div class="box">
+    <div class="label">Full name</div>
+    <input
+      type="text"
+      placeholder="(minimum 3 characters)"
+      formControlName="fname"
+    />
+    <div
+      class="notvalid"
+      *ngIf="myform.controls.fname.invalid && myform.controls.fname.touched"
+    >
+      <p *ngIf="myform.controls.fname.errors?.['required']">
+        Full Name Is required!
+      </p>
+      <p *ngIf="myform.controls.fname.errors?.['minlength']">
+        Full Name should be at least 3 characters
+      </p>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="label">Adress</div>
+    <input
+      type="text"
+      placeholder="(minimum 6 characters)"
+      formControlName="address"
+    />
+    <div
+      class="notvalid"
+      *ngIf="myform.controls.address.invalid && myform.controls.address.touched"
+    >
+      <p *ngIf="myform.controls.address.errors?.['required']">
+        Address Is required!
+      </p>
+      <p *ngIf="myform.controls.address.errors?.['minlength']">
+        Address should be at least 6 characters
+      </p>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="label">Credit Card Number</div>
+    <input
+      type="text"
+      placeholder="(16-digit number)"
+      formControlName="credit"
+    />
+    <div
+      class="notvalid"
+      *ngIf="myform.controls.credit.invalid && myform.controls.credit.touched"
+    >
+      <p *ngIf="myform.controls.credit.errors?.['required']">
+        Credit Number Is required!
+      </p>
+      <p *ngIf="myform.controls.credit.errors?.['minlength']">
+        Credit should be 16 digit-number
+      </p>
+    </div>
+  </div>
+  <p>we will never share your payment details with any one else.</p>
+  <button class="btn" type="submit">submit</button>
+</form>

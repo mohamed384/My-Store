@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="flex">
+    <div>
+      <div *ngFor="let d of dataCart">
+        <app-cat-item [product]="d" (priceChange)="priceItem()"></app-cat-item>
+      </div>
+      <div class="form" *ngIf="dataCart.length != 0" class="total">
+        ToTal: ${{ total }}
+      </div>
+    </div>
+    <app-form class="form" *ngIf="dataCart.length != 0"> </app-form>
+  </div>
+  <div class="noData" *ngIf="dataCart.length == 0">
+    No Products in the Cart!
+  </div>
+</div>

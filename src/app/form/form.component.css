@@ -1,0 +1,37 @@
+form .box .label,
+form .box input {
+    margin-bottom: 5px;
+
+}
+
+form .box .label {
+    margin-top: 5px;
+}
+
+form .box .notvalid p {
+    color: red;
+}
+
+form .box input {
+    padding: 3px;
+}
+
+
+
+form p {
+    margin: 5px;
+    font-size: 12px;
+    color: #777;
+}
+
+
+form .btn {
+    width: 99px;
+    height: 35px;
+    padding: 10px;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}

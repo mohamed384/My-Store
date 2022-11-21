@@ -1,0 +1,13 @@
+<div class="flex">
+  <img src="{{ product.url }}" alt="" />
+  <div class="card">
+    <div class="info">
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.price + "$" }}</p>
+    </div>
+    <h5>Carry Things Around Town!</h5>
+    <app-menu (iEvent)="getAmount($event)"></app-menu>
+    <div class="addCart" (click)="setProductCart(product)">Add To Cart</div>
+    <div class="back" routerLink="">Go Back To Product List</div>
+  </div>
+</div>

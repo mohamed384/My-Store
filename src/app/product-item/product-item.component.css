@@ -1,0 +1,26 @@
+.card {
+    text-align: center;
+    border: 1px solid var(--main-color);
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    padding: 3px;
+    background-color: #f6f6f6;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.addCart {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    margin: 10px auto;
+    background-color: var(--main-color);
+    color: white;
+    padding: 15px 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
