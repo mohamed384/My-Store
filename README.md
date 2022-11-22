@@ -1,7 +1,7 @@
 # MyStore
 My Store is an e-commerce site where you can buy products online and have them shipped to you. From the product list page, you can add any product to your cart in the quantity you want. You can also see more details about the product by clicking on the product itself.
 
-On the cart page, you can adjust the quantity, and you can delete the product from the cart if you want to. you can confirm the purchase by entering information about you, such as your name, address, and credit number. You can complete the purchase process by clicking on the SUBMIT button, and you will be moved to the success page, and the product will reach you within one to three days.
+On the cart page, you can adjust the quantity and see the total price of the products, and you can delete the product from the cart if you want to. you can confirm the purchase by entering information about you, such as your name, address, and credit number. You can complete the purchase process by clicking on the SUBMIT button, and you will be moved to the success page, and the product will reach you within one to three days.
 
 
 MyStore website including : 
