@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { CartService } from '../cart-service';
 import { Subscription } from 'rxjs';
 import { Product } from '../Product';
 
@@ -16,7 +16,11 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   productId!: number;
   product!: Product;
 
-  constructor(private dataService: DataService, private route: ActivatedRoute) {
+  constructor(
+    private dataService: DataService,
+    private cartService: CartService,
+    private route: ActivatedRoute
+  ) {
     this.routerSubscription = this.route.params.subscribe((params) => {
       this.productId = +params['id'];
     });
@@ -45,6 +49,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     this.amount = i;
   }
   setProductCart(product: Product) {
-    this.dataService.setProductCart(product, this.amount);
+    this.cartService.setProductCart(product, this.amount);
   }
 }

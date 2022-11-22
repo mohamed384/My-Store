@@ -56,6 +56,9 @@
       <p *ngIf="myform.controls.credit.errors?.['minlength']">
         Credit should be 16 digit-number
       </p>
+      <p *ngIf=" myform.controls.credit.errors?.['pattern']">
+        Credit must have only digits
+      </p>
     </div>
   </div>
   <p>we will never share your payment details with any one else.</p>

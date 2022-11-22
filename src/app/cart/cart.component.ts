@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { CartService } from '../cart-service';
+
 import { Product } from '../Product';
 
 @Component({
@@ -14,27 +15,27 @@ export class CartComponent implements OnInit {
   amount: number = 1;
   totalMap = new Map<number, number>([]);
 
-  constructor(private dataService: DataService) {
-    this.dataCart = this.dataService.cartProduct;
-    this.totalMap = this.dataService.total;
+  constructor(private cartService: CartService) {
+    this.dataCart = this.cartService.cartProduct;
+    this.totalMap = this.cartService.total;
 
     this.total = 0;
     this.totalMap.forEach((value) => {
       this.total += value;
     });
     this.total = +this.total.toFixed(2);
-    this.dataService.finalprice = this.total;
+    this.cartService.finalprice = this.total;
   }
 
   ngOnInit(): void {}
 
   priceItem() {
-    this.totalMap = this.dataService.total;
+    this.totalMap = this.cartService.total;
     this.total = 0;
     this.totalMap.forEach((value) => {
       this.total += value;
     });
     this.total = +this.total.toFixed(2);
-    this.dataService.finalprice = this.total;
+    this.cartService.finalprice = this.total;
   }
 }

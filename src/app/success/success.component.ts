@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { CartService } from '../cart-service';
 
 @Component({
   selector: 'app-success',
@@ -10,11 +11,14 @@ export class SuccessComponent implements OnInit {
   nameForm: string = '';
   finalprice: number = 0;
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private CartService: CartService,
+    private dataService: DataService
+  ) {}
 
   ngOnInit(): void {
-    this.nameForm = this.dataService.nameForm;
-    this.finalprice = this.dataService.finalprice;
+    this.nameForm = this.CartService.nameForm;
+    this.finalprice = this.CartService.finalprice;
   }
   activeProduct() {
     this.dataService.activeProductNavBar();

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { CartService } from '../cart-service';
 
 @Component({
   selector: 'app-form',
@@ -18,14 +18,15 @@ export class FormComponent implements OnInit {
     credit: new FormControl('', [
       Validators.required,
       Validators.minLength(16),
+      Validators.pattern('^[0-9]*$'),
     ]),
   });
-  constructor(private dataService: DataService, private router: Router) {}
+  constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {}
   submit() {
     if (this.myform.invalid) return;
-    this.dataService.saveForm(String(this.myform.controls.fname.value));
+    this.cartService.saveForm(String(this.myform.controls.fname.value));
     this.router.navigate(['/success']);
     this.myform.reset();
   }

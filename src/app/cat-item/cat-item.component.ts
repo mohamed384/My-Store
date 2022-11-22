@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../Product';
-import { DataService } from '../data.service';
+import { CartService } from '../cart-service';
 @Component({
   selector: 'app-cat-item',
   templateUrl: './cat-item.component.html',
@@ -13,25 +13,25 @@ export class CatItemComponent implements OnInit {
 
   amount: number = 1;
   itemPrice: number = 0;
-  constructor(private dataService: DataService) {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.amount = Number(this.dataService.productAmount.get(this.product.id));
+    this.amount = Number(this.cartService.productAmount.get(this.product.id));
     this.itemPrice = this.product.price * this.amount;
-    this.dataService.saveTotal(this.product.id, this.itemPrice);
+    this.cartService.saveTotal(this.product.id, this.itemPrice);
     this.priceChange.emit();
   }
 
   deleteItem(product: Product) {
-    this.dataService.deleteItem(product);
+    this.cartService.deleteItem(product);
     this.priceChange.emit();
   }
   change(amount: number) {
-    this.dataService.productAmount.set(this.product.id, amount);
-    this.amount = Number(this.dataService.productAmount.get(this.product.id));
+    this.cartService.productAmount.set(this.product.id, amount);
+    this.amount = Number(this.cartService.productAmount.get(this.product.id));
     this.itemPrice = this.product.price * this.amount;
 
-    this.dataService.saveTotal(this.product.id, this.itemPrice);
+    this.cartService.saveTotal(this.product.id, this.itemPrice);
     this.priceChange.emit();
   }
 }
